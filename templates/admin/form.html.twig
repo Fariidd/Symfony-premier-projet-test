@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Title de la home ! {{ parent() }}{% endblock %}
+{% block metadesc %}La métadescription de home{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Ajouter une série</h1>
+        {{ form_start(formSerie) }}
+        {{ form_widget(formSerie) }}
+
+        <button type="submit" class="btn btn-primary">Enregistrer la série</button>
+        {{ form_end(formSerie) }}
+    </div>
+
+{% endblock %}

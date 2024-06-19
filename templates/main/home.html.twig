@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Title de la home ! {{ parent() }}{% endblock %}
+{% block metadesc %}La métadescription de home{% endblock %}
+
+{% block body %}
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Catégorie</th>
+            <th scope="col">Poster</th>
+            <th scope="col">Action</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for serie in allSeries %}
+            <tr>
+                <th scope="row">{{ serie.id }}</th>
+                <td>{{ serie.name }}</td>
+                <td>{{ serie.categorie.name }}</td>
+                <td><img src="{{ asset('img/series'~serie.poster) }}" class="w-25" alt="{{ serie.name }}"></td>
+                <td>Modifier | Supprimer</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}
